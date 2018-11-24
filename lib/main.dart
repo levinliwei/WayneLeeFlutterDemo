@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:flutter_waynelee/page/DetailPage.dart';
-import 'package:flutter_waynelee/page/HomePage.dart';
-import 'package:flutter_waynelee/page/MusicPage.dart';
-import 'package:flutter_waynelee/page/TestPage.dart';
+import 'package:flutter_waynelee/music_data.dart';
+import 'package:flutter_waynelee/page/favorite_page.dart';
+import 'package:flutter_waynelee/page/home_page.dart';
+import 'package:flutter_waynelee/page/music_page.dart';
+import 'package:flutter_waynelee/page/me_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   final _pageList = [
     new HomePage(),
-    new MusicPage(),
+    new MusicData(),
     new DetailPage(),
     new TestPage(),
     new TestPage(),
@@ -43,9 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('${widget.title != null ? widget.title : ''}'),
-      ),
+//      appBar: new AppBar(
+//        title: new Text('${widget.title != null ? widget.title : ''}'),
+//      ),
       body: Center(child: getPageView()),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
