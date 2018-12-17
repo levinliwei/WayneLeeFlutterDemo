@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter_waynelee/config/colors.dart';
 import 'package:flutter_waynelee/music_data.dart';
 import 'package:flutter_waynelee/page/favorite_page.dart';
 import 'package:flutter_waynelee/page/home_page.dart';
@@ -36,47 +37,47 @@ class _MyHomePageState extends State<MyHomePage> {
   final _pageList = [
     new HomePage(),
     new MusicData(),
-    new DetailPage(),
-    new TestPage(),
+//    new TestPage(),
+    new FavoritePage(),
     new TestPage(),
   ];
 
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new Scaffold(
+    return Scaffold(
 //      appBar: new AppBar(
 //        title: new Text('${widget.title != null ? widget.title : ''}'),
 //      ),
+      backgroundColor: ColorEX.primary,
       body: Center(child: getPageView()),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               title: Text('Home'),
-              backgroundColor: Colors.black54),
+              backgroundColor: ColorEX.primary2),
           BottomNavigationBarItem(
               icon: Icon(Icons.music_note),
               title: Text('Music'),
-              backgroundColor: Colors.black54),
-          BottomNavigationBarItem(
-              icon: addIcon(),
-              title: Text(''),
-              backgroundColor: Colors.black54),
+              backgroundColor: ColorEX.primary2),
+//          BottomNavigationBarItem(
+//              icon: addIcon(),
+//              title: Text(''),
+//              backgroundColor: ColorEX.primary2),
           BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
               title: Text('Favorite'),
-              backgroundColor: Colors.black54),
+              backgroundColor: ColorEX.primary2),
 
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
               title: Text('Me'),
-              backgroundColor: Colors.black54),
+              backgroundColor: ColorEX.primary2),
         ],
         currentIndex: _selectedIndex,
-        type: BottomNavigationBarType.fixed,
-        fixedColor: Colors.red,
+        type: BottomNavigationBarType.shifting,
         onTap: _tabSelect,
-        iconSize: 20,
+        iconSize: 30,
       ),
     );
   }
